@@ -1,0 +1,6 @@
+# rm .zsh_history
+# if [[ $(pgrep -x "X") == "" ]] ; then
+#   export QT_QPA_PLATFORMTHEME=gtk
+#   rm .zsh_history
+#   startx
+# fi
