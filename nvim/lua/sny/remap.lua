@@ -22,17 +22,15 @@ kmset("v", "<C-s>", "<Esc>:w<CR>")
 
 
 -- Make a session and quit
-kmset("n", "<leader>q", ":mks!<CR>")
-kmset("n", "<leader>Q", ":mks!<CR>:xa<CR>")
+kmset("n", "<leader>Q", ":mks!<CR>")
 
 -- Remap for esc
 kmset("i", "jj", "<Esc>")
 kmset("i", "<C-j>", "<Esc>")
 kmset("i", "<C-M-j>", "<Esc>i")
 
--- Go doc
-kmset("n", "<leader>gd", ":tabnew<CR>:set filetype=go<CR>:r!go doc ")
-kmset("n", "<leader>gD", ":tabnew<CR>:set filetype=go<CR>:r!go doc -src -all -u ")
+-- Killing buffers like Emacs
+kmset("n", "<leader>q", ":bp<bar>sp<bar>bn<bar>bd<CR>")
 
 -- Toggle number line
 kmset("n", "<leader>L", ":set number!<CR>:set relativenumber!<CR>")

@@ -4,63 +4,65 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+	-- Packer can manage itself
+	use 'wbthomason/packer.nvim'
 
-  -- Telescope
-  use {
-    'nvim-telescope/telescope.nvim',
-    requires = { { 'nvim-lua/plenary.nvim' } }
-  }
+	-- Telescope
+	use {
+		'nvim-telescope/telescope.nvim',
+		requires = { { 'nvim-lua/plenary.nvim' } }
+	}
 
-  use 'simeji/winresizer'
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'nvim-tree/nvim-web-devicons', opt = true },
-  }
+	use 'pogyomo/winresize.nvim'
+	use 'pogyomo/submode.nvim'
 
-  -- Colorschemes
-  use { "catppuccin/nvim", as = "catppuccin" }
-  use "vv9k/bogster"
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+	}
 
-  -- Treesitter
-  use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
-  use 'nvim-treesitter/playground'
+	-- Colorschemes
+	use { "catppuccin/nvim", as = "catppuccin" }
+	use "vv9k/bogster"
 
-  use 'mbbill/undotree'
-  use 'tpope/vim-fugitive'
+	-- Treesitter
+	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+	use 'nvim-treesitter/playground'
 
-  use 'm4xshen/autoclose.nvim'
+	use 'mbbill/undotree'
+	use 'tpope/vim-fugitive'
 
-  -- nushell
-  use 'jose-elias-alvarez/null-ls.nvim'
-  use 'LhKipp/nvim-nu'
+	use 'm4xshen/autoclose.nvim'
 
-  use {
-    'VonHeikemen/lsp-zero.nvim',
-    -- branch = 'v3.x',
-    requires = {
-      -- LSP Support
-      { 'neovim/nvim-lspconfig' },
-      -- Autocompletion
-      { 'hrsh7th/nvim-cmp' },
-      { 'hrsh7th/cmp-nvim-lsp' },
-      { 'hrsh7th/cmp-nvim-lua' },
-      { 'L3MON4D3/LuaSnip' },
-    }
-  }
+	-- nushell
+	use 'jose-elias-alvarez/null-ls.nvim'
+	use 'LhKipp/nvim-nu'
 
-  -- Normal commenting
-  use {
-    'numToStr/Comment.nvim',
-    config = function()
-      require('Comment').setup()
-    end
-  }
+	use {
+		'VonHeikemen/lsp-zero.nvim',
+		-- branch = 'v3.x',
+		requires = {
+			-- LSP Support
+			{ 'neovim/nvim-lspconfig' },
+			-- Autocompletion
+			{ 'hrsh7th/nvim-cmp' },
+			{ 'hrsh7th/cmp-nvim-lsp' },
+			{ 'hrsh7th/cmp-nvim-lua' },
+			{ 'L3MON4D3/LuaSnip' },
+		}
+	}
 
-  -- That multicursor
-  use 'mg979/vim-visual-multi'
+	-- Normal commenting
+	use {
+		'numToStr/Comment.nvim',
+		config = function()
+			require('Comment').setup()
+		end
+	}
 
-  -- Modding Garry's Mod
-  use 'vim-scripts/gmlua.vim'
+	-- That multicursor
+	use 'mg979/vim-visual-multi'
+
+	-- Modding Garry's Mod
+	-- use 'vim-scripts/gmlua.vim'
 end)

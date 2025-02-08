@@ -1,0 +1,23 @@
+Usage:
+    ./install <OPTION> <FILE_NAME>
+Examples:
+    ./install -i config.txt
+
+OPTION
+    -i  makes symlinks to objects, listed in txt-file (FILE_NAME)
+    -r  removes symlinks to objects, listed in txt-file
+
+FILE_NAME
+    A file containing a list of files and symlinks that should be created or deleted
+    Example:
+    ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┑
+    │ config.txt                                         │
+    ┝━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┥
+    │ awesome /home/sny/.config/awesome                  │
+    │ nvim /home/sny/.config/nvim                        │
+    │ zsh/zshrc /home/sny/.zshrc                         │
+    │ zsh/zlogin /home/sny/.zlogin                       │
+    │ zsh/zshenv /home/sny/.zshenv                       │
+    ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┙
+    
+    Objects and targets separates with space, records — with newline

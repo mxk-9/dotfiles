@@ -2,13 +2,24 @@
 (setq make-backup-files nil)
 
 ;; use custom file
-(setq custom-file "~/.emacs.custom.el")
-(load-file custom-file)
+;; (setq custom-file "~/.emacs.custom.el")
+;; (load-file custom-file)
 
 ;; ==[MELPA]== ;;
+
+
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
+
+(setq package-list '(magit multiple-cursors tree-sitter-langs tree-sitter windresize nix-mode evil lua-mode go-mode dap-mode lsp-ivy helm lsp-treemacs company flycheck lsp-ui lsp-mode base16-theme all-the-icons zig-mode transpose-frame magit treesit-auto))
+
+(unless package-archive-contents
+  (package-refresh-contents))
+
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
 ;; ==[MELPA]== ;;
 
 ;; Disable fucking warning ;;
@@ -19,8 +30,8 @@
       scroll-conservatively 10000)
 
 ;; Set Font
-(add-to-list 'default-frame-alist '(font . "JetBrains Mono Medium 14"))
-(set-face-attribute 'default nil :font "JetBrains Mono Medium 14")
+(add-to-list 'default-frame-alist '(font . "JetBrains Mono Nerd Font Medium 14"))
+(set-face-attribute 'default nil :font "JetBrains Mono Nerd Font Medium 14")
 
 ;; HIDE SOME GRAPHICAL ELEMENTS
 (tool-bar-mode -1)
@@ -48,7 +59,7 @@
 ;; Line numbers and columns
 ;; (global-display-line-numbers-mode 1)
 (setq display-line-numbers-type 'relative)
-(setq column-number-mode t)
+(setq umn-number-mode t)
 (setq fill-column 80)
 
 (defun lines-and-column (modeHook)
@@ -146,9 +157,11 @@
 (lsp-and-tree 'c-mode-hook)
 (lsp-and-tree 'zig-mode-hook)
 (lsp-and-tree 'lua-mode-hook)
+(lsp-and-tree 'go-mode-hook)
 
 (add-hook 'pascal-mode-hook #'tree-sitter-hl-mode)
 (add-hook 'sh-mode-hook #'tree-sitter-hl-mode)
+
 
 ;; Lsp UI ;;
 (setq lsp-ui-doc-enable 1)
@@ -178,3 +191,16 @@
 ;; vscode-cpptools
 (require 'dap-cpptools)
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(treesit-auto transpose-frame zig-mode all-the-icons base16-theme lsp-ui flycheck company helm lsp-ivy dap-mode go-mode lua-mode evil nix-mode windresize tree-sitter-langs multiple-cursors magit)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
