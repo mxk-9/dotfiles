@@ -73,7 +73,7 @@
 (lines-and-column 'c-mode-hook)
 (lines-and-column 'pascal-mode-hook)
 (lines-and-column 'nix-mode-hook)
-(lines-and-column 'c++-mode-hook)
+(lines-and-column 'cpp-mode-hook)
 (lines-and-column 'go-mode-hook)
 (lines-and-column 'lua-mode-hook)
 (lines-and-column 'makefile-mode-hook)
@@ -153,7 +153,7 @@
   (add-hook modeHook #'lsp)
   (add-hook modeHook #'tree-sitter-hl-mode))
 
-(lsp-and-tree 'c++-mode-hook)
+(lsp-and-tree 'cpp-mode-hook)
 (lsp-and-tree 'c-mode-hook)
 (lsp-and-tree 'zig-mode-hook)
 (lsp-and-tree 'lua-mode-hook)
