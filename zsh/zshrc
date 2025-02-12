@@ -107,18 +107,27 @@ alias M="ud m"
 alias U="ud u"
 
 E() {
+	em_daemon="emacs --title=$1 --daemon=$1"
+	em_client="emacsclient -nc --socket=$1"
+
 	if [[ $1 == "" ]]; then
 		echo "E <session_name>"
 		return
 	fi
-	emacs --daemon=$1; emacsclient -nc --socket=$1
+
+	if [[ $2 != "" ]]; then
+		em_daemon="$em_daemon --chdir='$2'"
+	fi
+
+	$(eval $em_daemon) && $(eval $em_client)
 }
 
-RaylibTemplate() {
-    if [[ $1 == "" ]]; then
-        echo "RaylibTemplate <project_name>"
-    fi
-    cp -rfv ~/sandbox/templates/raylib-c/ $1
+EK() {
+	if [[ $1 != "" ]]; then
+		emacsclient --socket=$1 -e "(save-buffers-kill-emacs)"
+	else
+		echo "EK <session_name>"
+	fi
 }
 
 calc() {

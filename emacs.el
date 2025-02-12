@@ -105,8 +105,6 @@
 ;; Autoclose brackets ;;
 
 ;; THEME ;;
-;; (load-theme 'base16-uwunicorn t)
-;; (load-theme 'base16-xcode-dusk t)
 (load-theme 'base16-catppuccin-mocha t)
 ;; THEME ;;
 
