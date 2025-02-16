@@ -122,12 +122,16 @@ E() {
 	$(eval $em_daemon) && $(eval $em_client)
 }
 
-EK() {
+Ekill() {
 	if [[ $1 != "" ]]; then
 		emacsclient --socket=$1 -e "(save-buffers-kill-emacs)"
 	else
 		echo "EK <session_name>"
 	fi
+}
+
+Elist() {
+	pgrep --list-full emacs | grep -e '--daemon=' | cut -f 3 -d '=' | cut -f 1 -d ' '
 }
 
 calc() {

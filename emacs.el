@@ -195,7 +195,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(treesit-auto transpose-frame zig-mode all-the-icons base16-theme lsp-ui flycheck company helm lsp-ivy dap-mode go-mode lua-mode evil nix-mode windresize tree-sitter-langs multiple-cursors magit)))
+   '(json-mode treesit-auto transpose-frame zig-mode all-the-icons base16-theme lsp-ui flycheck company helm lsp-ivy dap-mode go-mode lua-mode evil nix-mode windresize tree-sitter-langs multiple-cursors magit)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
