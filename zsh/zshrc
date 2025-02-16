@@ -1,7 +1,7 @@
 # export some variables
 export GOROOT="/usr/lib/go"
 export GOTOOLDIR="/usr/lib/go/pkg/tool/linux_amd64"
-export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:$(go env GOPATH)/bin"
 
 typeset -U path cdpath fpath manpath
 

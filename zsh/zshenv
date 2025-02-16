@@ -10,4 +10,3 @@ fi
 ZSH="/usr/share/oh-my-zsh";
 ZSH_CACHE_DIR="/home/sny/.cache/oh-my-zsh";
 export MANPAGER='nvim +Man!'
-export GOSRC="/lib/go/src/"
