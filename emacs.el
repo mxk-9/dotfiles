@@ -77,6 +77,7 @@
 (lines-and-column 'go-mode-hook)
 (lines-and-column 'lua-mode-hook)
 (lines-and-column 'makefile-mode-hook)
+(lines-and-column 'emacs-lisp-mode-hook)
 
 ;; resize emacs frame by pixel
 (setq frame-resize-pixelwise t)
