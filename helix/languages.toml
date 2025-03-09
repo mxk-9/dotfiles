@@ -1,0 +1,10 @@
+[[language]]
+name = "markdown"
+formatter = {command = "dprint", args = ["fmt", "--stdin", "md"]}
+
+[[language]]
+name = "cpp"
+auto-format = false
+file-types = ["cpp", "h", "hpp", "cxx"]
+language-servers = ["clangd"]
+indent = {tab-width = 2, unit = "  "}

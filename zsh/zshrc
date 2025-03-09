@@ -203,6 +203,7 @@ alias -g -- 'nori'='doas nixos-rebuild switch --flake /home/sny/nixos-cfg --impu
 alias -g -- 'noru'='nix flake update /home/sny/nixos-cfg && doas nixos-rebuild switch --flake /home/sny/nixos-cfg --upgrade'
 alias -g -- 'nr'='nix run'
 alias -g -- 'rsync'='rsync -r --info=progress2 --info=name0'
+alias 'hx'='helix'
 # Named Directory Hashes
 
 

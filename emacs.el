@@ -74,6 +74,7 @@
 (lines-and-column 'pascal-mode-hook)
 (lines-and-column 'nix-mode-hook)
 (lines-and-column 'cpp-mode-hook)
+(lines-and-column 'rust-mode-hook)
 (lines-and-column 'go-mode-hook)
 (lines-and-column 'lua-mode-hook)
 (lines-and-column 'makefile-mode-hook)
@@ -157,6 +158,7 @@
 (lsp-and-tree 'zig-mode-hook)
 (lsp-and-tree 'lua-mode-hook)
 (lsp-and-tree 'go-mode-hook)
+(lsp-and-tree 'rust-mode-hook)
 
 (add-hook 'pascal-mode-hook #'tree-sitter-hl-mode)
 (add-hook 'sh-mode-hook #'tree-sitter-hl-mode)
@@ -196,7 +198,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(json-mode treesit-auto transpose-frame zig-mode all-the-icons base16-theme lsp-ui flycheck company helm lsp-ivy dap-mode go-mode lua-mode evil nix-mode windresize tree-sitter-langs multiple-cursors magit)))
+   '(all-the-icons base16-theme company dap-mode evil flycheck go-mode
+                   helm json-mode lsp-ivy lsp-ui lua-mode magit
+                   multiple-cursors nix-mode nushell-mode rust-mode
+                   transpose-frame tree-sitter-langs treesit-auto
+                   windresize zig-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
