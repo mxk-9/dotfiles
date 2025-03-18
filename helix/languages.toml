@@ -4,7 +4,12 @@ formatter = {command = "dprint", args = ["fmt", "--stdin", "md"]}
 
 [[language]]
 name = "cpp"
-auto-format = false
+auto-format = true
 file-types = ["cpp", "h", "hpp", "cxx"]
 language-servers = ["clangd"]
 indent = {tab-width = 2, unit = "  "}
+
+[[language]]
+name = "lua"
+auto-format = true
+formatter = {command = "stylua", args = ["--column-width", "80", "--indent-type", "Spaces", "--indent-width", "2", "-"]}

@@ -2,10 +2,46 @@ theme = "bogster"
 
 [keys.normal]
 backspace = {"t" = ":lsp-restart", "s" = ":lsp-stop"}
-F1 = {"n" = ":set soft-wrap.enable false", "N" = ":set soft-wrap.enable true", "t" = ":set smart-tab.enable false", "T" = ":set smart-tab.enable true"}
-F2 = {"b" = ":buffer-close", "B" = ":buffer-close!", "a" = ":buffer-close-all", "A" = ":buffer-close-all!"}
-F3 = { w = ":sh cargo check 2>&1 || true", e = ":sh cargo test -- --nocapture 2>&1 || true", r = ":sh cargo run 2>&1 || true", t = ":sh cargo test 2>&1 || true", b = ":sh cargo build 2>&1 || true"}
 esc = ["collapse_selection", "keep_primary_selection"]
+"C-s" = ":w"
+
+[keys.normal.F1]
+n = ":set soft-wrap.enable false"
+N = ":set soft-wrap.enable true"
+t = ":set smart-tab.enable false"
+T = ":set smart-tab.enable true"
+
+[keys.normal.F1.c]
+o = ":config-open"
+r = ":config-reload"
+l = ":open ~/.config/helix/languages.toml"
+
+[keys.normal.F2]
+b = ":buffer-close"
+B = ":buffer-close!"
+a = ":buffer-close-all"
+A = ":buffer-close-all!"
+
+[keys.normal.F3.r]
+c = ":sh cargo check 2>&1 || true"
+e = ":sh cargo test -- --nocapture 2>&1 || true"
+r = ":sh cargo run 2>&1 || true"
+t = ":sh cargo test 2>&1 || true"
+b = ":sh cargo build 2>&1 || true"
+
+[keys.normal.F3.g]
+t = ":sh go test 2>&1 || true"
+T = ":sh go test -x 2>&1 || true"
+b = ":sh go build 2>&1 || true"
+B = ":sh go build -x 2>&1 || true"
+r = ":sh go run 2>&1 || true"
+R = ":sh go run -x 2>&1 || true"
+m = ":sh go mod tidy 2>&1 || true"
+
+[keys.insert]
+"C-s" = ":w"
+[keys.insert.j]
+j = "normal_mode"
 
 [editor]
 scrolloff = 1
@@ -15,7 +51,5 @@ soft-wrap.enable = true
 bufferline = "multiple"
 line-number = "relative"
 cursorline = true
-
 cursor-shape = { "insert" = "bar", "select" = "underline"}
-
 lsp = {display-messages = true}
