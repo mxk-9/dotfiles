@@ -1,0 +1,7 @@
+exec nm-applet --indicator
+exec blueman-applet
+exec swaync
+exec swayidle after-resume '$swaylock'
+exec rm ~/.zsh_history
+exec keepassxc
+exec AmneziaVPN

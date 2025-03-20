@@ -1,0 +1,12 @@
+# Borders
+# default_border none
+default_border pixel 4
+font pango:JetBrains Mono 12
+titlebar_padding 2
+titlebar_border_thickness 2
+
+include colorschemes/dracula
+
+bar {
+    swaybar_command waybar -c ~/.config/sway/waybar/config -s ~/.config/sway/waybar/style.css
+}

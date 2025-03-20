@@ -4,6 +4,7 @@ theme = "bogster"
 backspace = {"t" = ":lsp-restart", "s" = ":lsp-stop"}
 esc = ["collapse_selection", "keep_primary_selection"]
 "C-s" = ":w"
+"C-A-s" = ":wa!"
 
 [keys.normal.F1]
 n = ":set soft-wrap.enable false"
@@ -31,11 +32,8 @@ b = ":sh cargo build 2>&1 || true"
 
 [keys.normal.F3.g]
 t = ":sh go test 2>&1 || true"
-T = ":sh go test -x 2>&1 || true"
 b = ":sh go build 2>&1 || true"
-B = ":sh go build -x 2>&1 || true"
 r = ":sh go run 2>&1 || true"
-R = ":sh go run -x 2>&1 || true"
 m = ":sh go mod tidy 2>&1 || true"
 
 [keys.insert]

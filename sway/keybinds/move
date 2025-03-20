@@ -1,0 +1,42 @@
+# Moving around
+## Move focus between containers
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+## Move container
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+floating_modifier $mod
+
+# Move mouse cursor with keyboard
+mode "mouse1" {
+    bindsym k seat - cursor move 0 -10
+    bindsym j seat - cursor move 0 10
+    bindsym h seat - cursor move -10 0
+    bindsym l seat - cursor move 10 0
+
+    bindsym Shift+k seat - cursor move 0 -30
+    bindsym Shift+j seat - cursor move 0 30
+    bindsym Shift+h seat - cursor move -30 0
+    bindsym Shift+l seat - cursor move 30 0
+
+    bindsym Ctrl+k seat - cursor move 0 -60
+    bindsym Ctrl+j seat - cursor move 0 60
+    bindsym Ctrl+h seat - cursor move -60 0
+    bindsym Ctrl+l seat - cursor move 60 0
+
+    bindsym q seat - cursor press BTN_LEFT, seat - cursor release BTN_LEFT
+    bindsym Shift+q seat - cursor press BTN_LEFT
+    bindsym w seat - cursor press BTN_MIDDLE, seat - cursor release BTN_MIDDLE
+    bindsym e seat - cursor press BTN_RIGHT, seat - cursor release BTN_RIGHT
+
+    # Return to default mode
+    bindsym Escape mode "default"
+}
+bindsym $mod+m mode "mouse1"
+

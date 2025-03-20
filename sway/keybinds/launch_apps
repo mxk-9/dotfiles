@@ -1,0 +1,19 @@
+# Apps
+bindsym $mod+Return exec $term
+bindsym $mod+d exec $menu --width=50% --height=60% -I -t kitty -i -w 4 --show drun
+bindsym $mod+Mod1+Return exec emacsclient -nc
+bindsym $mod+p exec wdisplays
+bindsym Ctrl+$mod+Return exec dolphin
+
+# screenshots
+bindsym $mod+c exec grim -g "$(slurp)" /tmp/$(date +'%H:%M:%S.png')
+
+# Default line
+bindsym $mod+F1 exec firefox
+bindsym $mod+F2 exec pavucontrol
+bindsym $mod+F3 exec telegram-desktop
+bindsym $mod+F4 exec gimp
+# Alt line
+bindsym $mod+Mod1+F1 exec powerprofilesctl set power-saver
+bindsym $mod+Mod1+F2 exec powerprofilesctl set balanced
+bindsym $mod+Mod1+F3 exec powerprofilesctl set performance

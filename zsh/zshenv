@@ -10,3 +10,7 @@ fi
 ZSH="/usr/share/oh-my-zsh";
 ZSH_CACHE_DIR="/home/sny/.cache/oh-my-zsh";
 export MANPAGER='nvim +Man!'
+export QT_QPA_PLATFORMTHEME=kde
+export QT_STYLE_OVERRIDE=gtk2
+export QT_FONT_DPI=96
+export GTK_THEME=Dracula

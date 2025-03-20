@@ -1,0 +1,17 @@
+# Brightness
+bindsym XF86MonBrightnessUp   exec light -A 2
+bindsym XF86MonBrightnessDown exec light -U 2
+
+# Volume
+bindsym XF86AudioRaiseVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ +1%'
+bindsym XF86AudioLowerVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ -1%'
+bindsym XF86AudioMute        exec 'pactl set-sink-mute   @DEFAULT_SINK@ toggle'
+
+# Media control
+bindsym $mod+F10       exec playerctl play-pause
+bindsym $mod+Shift+F10 exec playerctl -a pause
+bindsym $mod+Ctrl+F10  exec playerctl -a play-pause
+bindsym $mod+F11       exec playerctl previous
+bindsym $mod+F12       exec playerctl next
+
+bindsym XF86AudioPlay exec playerctl play-pause

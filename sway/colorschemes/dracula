@@ -1,0 +1,8 @@
+# Colors
+# class                  border  background text    indicator child_border
+client.background        #282a36 #ffffff    #000000 #000000   #000000
+client.focused           #44475a #bd93f9    #f8f8f2 #484e50   #bd93f9
+client.focused_inactive  #282a36 #44475a    #888888 #484e50   #5f676a
+client.focused_tab_title #282a36 #44475a    #f8f8f2 #000000   #000000
+client.unfocused         #282a36 #282a36    #888888 #292d2e   #222222
+client.urgent            #ff5555 #ff5555    #f8f8f2 #900000   #900000

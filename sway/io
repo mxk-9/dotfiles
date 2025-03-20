@@ -1,0 +1,25 @@
+# Some input config
+input * {
+    xkb_layout "us,ru"
+    xkb_options "grp:caps_toggle,compose:rctrl"
+
+    tap enabled
+    dwt disabled
+}
+
+# Monitor
+output eDP-1 {
+    background ~/.config/sway/wall.png fill
+    pos 0 0
+}
+
+output HDMI-A-1 {
+    background ~/.config/sway/wallhen.jpg fill
+    pos 1920 0
+}
+
+# Toggle touchpad
+bindsym $mod+x input type:touchpad events toggle enabled disabled
+
+# Hide mouse cursor after a period of inactivity
+seat seat0 hide_cursor 1000

@@ -1,0 +1,23 @@
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Lock screen
+bindsym Ctrl+Mod1+l exec $swaylock
+
+# Scratchpad
+bindsym $mod+s move scratchpad
+bindsym $mod+Shift+s scratchpad show
+
+# Wacom
+bindsym $mod+Shift+x input 1386:891:Wacom_One_by_Wacom_M_Pen map_to_output HDMI-A-1
+bindsym $mod+Ctrl+x  input 1386:891:Wacom_One_by_Wacom_M_Pen map_to_output eDP-1
+
+# Logout
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' \
+    -B 'Yes, exit sway' 'swaymsg exit' \
+    -B 'Suspend' 'systemctl suspend; kill -9 $(pidof swaynag)' \
+    -B 'Shutdown' 'poweroff' \
+    -B 'Reboot' 'reboot'

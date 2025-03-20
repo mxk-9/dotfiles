@@ -1,0 +1,6 @@
+set $mod Mod4
+set $menu wofi
+set $term kitty
+set $editor emacsclient -nc
+set $cfg /home/sny/.config/sway/
+set $swaylock swaylock -c 282a36
