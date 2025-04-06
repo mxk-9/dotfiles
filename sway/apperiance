@@ -8,5 +8,5 @@ titlebar_border_thickness 2
 include colorschemes/dracula
 
 bar {
-    swaybar_command waybar -c ~/.config/sway/waybar/config -s ~/.config/sway/waybar/style.css
+    swaybar_command waybar
 }

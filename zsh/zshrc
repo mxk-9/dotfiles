@@ -1,7 +1,7 @@
 # export some variables
 export GOROOT="/usr/lib/go"
 export GOTOOLDIR="/usr/lib/go/pkg/tool/linux_amd64"
-export PATH="$PATH:$(go env GOPATH)/bin:$HOME/.cargo/bin"
+export PATH="$PATH:$(go env GOPATH)/bin:$HOME/.cargo/bin:$HOME/.config/i3/sh:$HOME/.config/i3/daemons"
 
 typeset -U path cdpath fpath manpath
 
@@ -183,7 +183,7 @@ alias -- 'vimdiff'='nvim -d'
 
 alias -g -- 'chmo'='chmod 754 -Rv'
 alias -g -- 'chmoff'='chmod 000 -Rv'
-alias -g -- 'd'='dragon -a -x'
+alias -g -- 'd'='dragon-drop -a -x'
 alias -g -- 'ds'='doas'
 alias -g -- 'e'='nvim'
 alias -g -- 'es'='nvim -S'

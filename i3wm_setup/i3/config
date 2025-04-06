@@ -1,0 +1,176 @@
+# Variables
+set $mod Mod4
+set $refresh_i3status killall -SIGUSR1 i3status
+set $term kitty
+
+set $up k
+set $down j
+set $left h
+set $right l
+
+floating_modifier Mod4
+
+font pango:JetBrains Mono 15
+
+# Autostart
+## Start XDG autostart .desktop files
+exec --no-startup-id dex --autostart --environment i3
+
+## lock screen after suspend
+exec --no-startup-id xss-lock --transfer-sleep-lock -- locker_command.sh --nofork
+
+exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
+exec --no-startup-id dunst
+
+## Daemons
+exec --no-startup-id autoscreend.sh start
+exec --no-startup-id powersaverd.sh start
+
+# Keys
+bindsym $mod+Shift+q kill
+
+## change focus
+bindsym $mod+$left  focus left
+bindsym $mod+$down  focus down
+bindsym $mod+$up    focus up
+bindsym $mod+$right focus right
+
+## move focused window
+bindsym $mod+Ctrl+$left  move left
+bindsym $mod+Ctrl+$down  move down
+bindsym $mod+Ctrl+$up    move up
+bindsym $mod+Ctrl+$right move right
+
+## multi monitor setup
+bindsym $mod+Ctrl+Shift+$right move workspace to output right
+bindsym $mod+Ctrl+Shift+$down  move workspace to output down
+bindsym $mod+Ctrl+Shift+$up    move workspace to output up
+bindsym $mod+Ctrl+Shift+$left  move workspace to output left
+
+## switch to workspace
+bindsym $mod+1  workspace number 1
+bindsym $mod+2  workspace number 2
+bindsym $mod+3  workspace number 3
+bindsym $mod+4  workspace number 4
+bindsym $mod+5  workspace number 5
+bindsym $mod+6  workspace number 6
+bindsym $mod+7  workspace number 7
+bindsym $mod+8  workspace number 8
+bindsym $mod+9  workspace number 9
+bindsym $mod+10 workspace number 10
+
+## move focused container to workspace
+bindsym $mod+Shift+1  move container to workspace number 1
+bindsym $mod+Shift+2  move container to workspace number 2
+bindsym $mod+Shift+3  move container to workspace number 3
+bindsym $mod+Shift+4  move container to workspace number 4
+bindsym $mod+Shift+5  move container to workspace number 5
+bindsym $mod+Shift+6  move container to workspace number 6
+bindsym $mod+Shift+7  move container to workspace number 7
+bindsym $mod+Shift+8  move container to workspace number 8
+bindsym $mod+Shift+9  move container to workspace number 9
+bindsym $mod+Shift+10 move container to workspace number 10
+
+## split
+bindsym $mod+Shift+minus split h
+bindsym $mod+minus       split v
+
+## fullscreen
+bindsym $mod+f fullscreen toggle
+
+## change container layout
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+## toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+## change focus between tiling / floating windows
+bindsym $mod+a       focus parent
+bindsym $mod+Shift+a focus child
+
+## move currently focused window to the scratchpad
+bindsym $mod+equal       move scratchpad
+bindsym $mod+Shift+equal scratchpad show
+
+## config
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+
+## scripts
+bindsym $mod+Shift+e exec logout_rofi.sh
+bindsym $mod+x       exec touchpad_toggle.sh
+bindsym $mod+Shift+x exec "xsetwacom --set 'Wacom One by Wacom M Pen stylus' MapTooutput next"
+bindsym $mod+Shift+p exec power_menu_rofi.sh
+bindsym $mod+d       exec monitor_rofi.sh
+bindsym $mod+b       exec bluetooth_toggle.sh
+bindsym $mod+n       exec network_toggle on
+bindsym $mod+Shift+n exec network_toggle on
+
+## apps
+bindsym $mod+p       exec rofi -show drun
+bindsym $mod+s       exec screenshoter.sh window
+bindsym $mod+Shift+s exec screenshoter.sh area
+bindsym $mod+Ctrl+s  exec screenshoter.sh full
+bindsym Ctrl+Mod1+l  exec locker_command.sh
+bindsym $mod+Return  exec $term
+
+bindsym $mod+F1      exec firefox
+bindsym $mod+F2      exec pavucontrol
+bindsym $mod+Mod1+F2 exec blueman-manager
+bindsym $mod+F3      exec telegram-desktop
+bindsym $mod+F4      exec gimp
+bindsym $mod+Mod1+F4 exec blender
+
+## Media
+### Brightness
+bindsym XF86MonBrightnessUp   exec light -A 2
+bindsym XF86MonBrightnessDown exec light -U 2
+### Volume
+bindsym XF86AudioRaiseVolume exec dunst_volume.sh up
+bindsym XF86AudioLowerVolume exec dunst_volume.sh down
+bindsym XF86AudioMute        exec dunst_volume.sh mute
+bindsym $mod+Mod1+F12        exec dunst_volume.sh up
+bindsym $mod+Mod1+F11        exec dunst_volume.sh down
+### Media control
+bindsym XF86AudioPlay        exec playerctl play-pause
+bindsym $mod+F10             exec playerctl play-pause
+bindsym $mod+Shift+F10       exec playerctl -a pause
+bindsym $mod+Ctrl+F10        exec playerctl -a play-pause
+bindsym $mod+F11             exec playerctl previous
+bindsym $mod+F12             exec playerctl next
+
+
+## Resizing
+bindsym $mod+r mode "resize"
+mode "resize" {
+    bindsym $left  resize shrink width  25px
+    bindsym $right resize grow   width  25px
+    bindsym $up    resize shrink height 25px
+    bindsym $down  resize grow   height 25px
+
+    ### Back to normal
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bar {
+    position top
+    font pango:JetBrains Mono 15.0
+    status_command i3status
+    colors {
+        #                 border  background text
+        active_workspace  #282a36 #282a36    #ffffff
+        focused_workspace #282a36 #44475a    #ffffff
+    }
+}
+
+# Apperiance
+default_border pixel 4
+## Colors
+client.background "#ffffff"
+
+#                       border  background text    indicator child_border
+client.focused          #282a36 #44475a    #ffffff #ffffff   #44475a
+client.focused_inactive #282a36 #282a36    #cccccc #ffffff   #44475a

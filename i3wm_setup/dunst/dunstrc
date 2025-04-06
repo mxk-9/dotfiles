@@ -1,0 +1,20 @@
+[global]
+follow = mouse
+width = 450
+height = 350
+origin = top-right
+offset = 30x30
+font = JetBrains Mono 15
+icon_theme = Dracula
+min_icon_size = 32
+
+[urgency_normal]
+background = "#44475a"
+foreground = "#ffffff"
+border = "282a36"
+
+[urgency_critical]
+background = "#ce3434"
+foreground = "#ffffff"
+border = "#ff0000"
+

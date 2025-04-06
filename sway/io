@@ -14,7 +14,7 @@ output eDP-1 {
 }
 
 output HDMI-A-1 {
-    background ~/.config/sway/wallhen.jpg fill
+    background ~/.config/sway/wall.png fill
     pos 1920 0
 }
 

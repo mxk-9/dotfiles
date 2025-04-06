@@ -1,6 +1,7 @@
-# rm .zsh_history
-# if [[ $(pgrep -x "X") == "" ]] ; then
-#   export QT_QPA_PLATFORMTHEME=gtk
-#   rm .zsh_history
-#   startx
-# fi
+if [[ $(pgrep -x "Xorg") == "" ]] && [[ $(pgrep -x "sddm") == "" ]]; then
+  export QT_QPA_PLATFORMTHEME=kde
+  export QT_STYLE_OVERRIDE=Fusion
+  export QT_FONT_DPI=96
+  export GTK_THEME=Dracula
+  startx
+fi

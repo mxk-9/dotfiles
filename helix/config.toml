@@ -1,4 +1,6 @@
+# theme = "zed_onedark"
 theme = "bogster"
+# theme = "gruvbox"
 
 [keys.normal]
 backspace = {"t" = ":lsp-restart", "s" = ":lsp-stop"}
@@ -38,6 +40,7 @@ m = ":sh go mod tidy 2>&1 || true"
 
 [keys.insert]
 "C-s" = ":w"
+"C-A-s" = ":wa!"
 [keys.insert.j]
 j = "normal_mode"
 
