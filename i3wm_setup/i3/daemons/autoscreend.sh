@@ -6,6 +6,7 @@ set_monitors_mode() {
     "auto") xrandr --auto ;;
   esac
 
+  setup_wallpaper.sh
   pkill warpd
   wait $!
   warpd

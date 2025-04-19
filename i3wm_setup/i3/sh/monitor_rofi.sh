@@ -19,6 +19,8 @@ case $item in
 
 esac
 
+setup_wallpaper.sh
 pkill warpd
 wait $!
 warpd
+

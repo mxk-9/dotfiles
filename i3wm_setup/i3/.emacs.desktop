@@ -1,0 +1,103 @@
+;; -*- mode: emacs-lisp; lexical-binding:t; coding: utf-8-emacs; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Mon Apr  7 09:36:00 2025
+;; Desktop file format version 208
+;; Emacs version 30.1
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (26611 29264 957451 505000) (desktop . "208") "sny@Honor-Arch" nil nil ((((minibuffer . t) (undecorated) (override-redirect) (font . "-JB-JetBrainsMono Nerd Font-medium-normal-normal-*-19-*-*-*-m-0-iso10646-1") (font-parameter . "JetBrains Mono Nerd Font Medium 14") (border-width . 0) (internal-border-width . 0) (child-frame-border-width) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#d5c4a1") (background-color . "#282828") (mouse-color . "black") (border-color . "#665c54") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 0) (tab-bar-lines . 1) (tool-bar-lines . 0) (title . "i3wm") (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 12) (scroll-bar-height . 12) (alpha) (alpha-background) (no-focus-on-map) (no-accept-focus) (fullscreen . maximized) (visibility . t) (use-frame-synchronization) (skip-taskbar) (z-group) (environment "_=/usr/bin/emacsclient" "OLDPWD=/home/sny" "QT_FONT_DPI=96" "MAIL=/var/spool/mail/sny" "DBUS_SESSION_BUS_ADDRESS=unix:path=/tmp/dbus-nj54SsOdxT,guid=ac2765610bdb23608e0a3df967f27aca" "PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-ndk:/opt/android-sdk/cmdline-tools/latest/bin:/opt/android-sdk/platform-tools:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/lib/rustup/bin:/home/sny/.go/bin:/home/sny/.cargo/bin:/home/sny/.config/i3/sh:/home/sny/.config/i3/daemons" "XDG_DATA_DIRS=/home/sny/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share" "ANDROID_NDK_ROOT=/opt/android-ndk" "DEBUGINFOD_URLS=https://debuginfod.archlinux.org " "XDG_RUNTIME_DIR=/run/user/1000" "XDG_SESSION_ID=4" "XDG_VTNR=1" "ANDROID_SDK_ROOT=/opt/android-sdk" "PAGER=less" "__HM_ZSH_SESS_VARS_SOURCED=1" "SHLVL=3" "DISPLAY=:0" "MANPAGER=nvim +Man!" "USER=sny" "GOTOOLDIR=/usr/lib/go/pkg/tool/linux_amd64" "TERM=linux" "ANDROID_HOME=/opt/android-sdk" "XDG_SESSION_CLASS=user" "ANDROID_NDK_HOME=/opt/android-ndk" "GOROOT=/usr/lib/go" "LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.7z=01;31:*.ace=01;31:*.alz=01;31:*.apk=01;31:*.arc=01;31:*.arj=01;31:*.bz=01;31:*.bz2=01;31:*.cab=01;31:*.cpio=01;31:*.crate=01;31:*.deb=01;31:*.drpm=01;31:*.dwm=01;31:*.dz=01;31:*.ear=01;31:*.egg=01;31:*.esd=01;31:*.gz=01;31:*.jar=01;31:*.lha=01;31:*.lrz=01;31:*.lz=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.lzo=01;31:*.pyz=01;31:*.rar=01;31:*.rpm=01;31:*.rz=01;31:*.sar=01;31:*.swm=01;31:*.t7z=01;31:*.tar=01;31:*.taz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tgz=01;31:*.tlz=01;31:*.txz=01;31:*.tz=01;31:*.tzo=01;31:*.tzst=01;31:*.udeb=01;31:*.war=01;31:*.whl=01;31:*.wim=01;31:*.xz=01;31:*.z=01;31:*.zip=01;31:*.zoo=01;31:*.zst=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:" "LANG=en_US.UTF-8" "HOME=/home/sny" "MOTD_SHOWN=pam" "WINDOWPATH=1" "QT_STYLE_OVERRIDE=Fusion" "DESKTOP_STARTUP_ID=i3/new_emacs_session.sh/1267-1-Honor-Arch_TIME36198238" "XAUTHORITY=/home/sny/.Xauthority" "XDG_SESSION_TYPE=tty" "QT_QPA_PLATFORMTHEME=kde" "LOGNAME=sny" "PWD=/home/sny" "XDG_SEAT=seat0" "ANDROID_NDK=/opt/android-ndk" "I3SOCK=/run/user/1000/i3/ipc-socket.1267" "LESS=-R" "GTK_THEME=Dracula" "LSCOLORS=Gxfxcxdxbxegedabagacad" "SHELL=/usr/bin/zsh") (cursor-color . "#fb4934") (display-type . color) (background-mode . dark) (sticky) (shaded) (dnd-root-window-position) (last-focus-update . t) (frameset--id . "E455-2C5B-3CDE-B4B4") (frameset--mini t . t) (modeline . t) (unsplittable) (icon-name) (display . ":0") (explicit-name) (tabs (tab (name . "autoscreend.sh") (explicit-name) (time . 1744007647.46115) (ws ((min-height . 4) (min-width . 20) (min-height-ignore . 2) (min-width-ignore . 8) (min-height-safe . 1) (min-width-safe . 4) (min-pixel-height . 104) (min-pixel-width . 220) (min-pixel-height-ignore . 52) (min-pixel-width-ignore . 88) (min-pixel-height-safe . 26) (min-pixel-width-safe . 44)) hc (pixel-width . 1912) (pixel-height . 1013) (total-width . 174) (total-height . 39) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 957) (pixel-height . 1013) (total-width . 87) (total-height . 39) (normal-height . 1.0) (normal-width . 0.5005230125523012) (parameters (context "autoscreend.sh" (front-context-string . "\n  pkill warpd\n ") (rear-context-string . "tup_wallpaper.sh"))) (buffer "autoscreend.sh" (selected . t) (hscroll . 0) (fringes 8 8 nil nil) (margins nil) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 187) (start . 1)) (prev-buffers ("autoscreend.sh" 1 169) ("daemons" 1 161) ("monitor_rofi.sh" 1 557) ("config" 1 608) ("i3" 1 162) ("*scratch*" 1 148))) (leaf (last . t) (pixel-width . 955) (pixel-height . 1013) (total-width . 87) (total-height . 39) (normal-height . 1.0) (normal-width . 0.49947698744769875) (parameters (context "setup_wallpaper.sh" (front-context-string . "") (rear-context-string . "--bg-tile $WALL\n"))) (buffer "setup_wallpaper.sh" (selected) (hscroll . 0) (fringes 8 8 nil nil) (margins nil) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 76) (start . 1)) (prev-buffers ("setup_wallpaper.sh" 1 15) ("sh" 1 156) ("i3" 1 388) ("daemons" 1 117) ("autoscreend.sh" 1 223) ("config" 1 118))))) (current-tab (name . "config") (explicit-name))) (height . 38) (width . 172) (left . 1920) (top . 33)) ((min-height . 4) (min-width . 10) (min-height-ignore . 2) (min-width-ignore . 4) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 104) (min-pixel-width . 110) (min-pixel-height-ignore . 52) (min-pixel-width-ignore . 44) (min-pixel-height-safe . 26) (min-pixel-width-safe . 22)) leaf (pixel-width . 1912) (pixel-height . 987) (total-width . 174) (total-height . 37) (normal-height . 1.0) (normal-width . 1.0) (buffer "config" (selected . t) (hscroll . 0) (fringes 8 8 nil nil) (margins nil) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 739) (start . 1)) (prev-buffers ("i3" 1 168) ("*Buffer List*" 1 557))) (((minibuffer . t) (display-type . mono) (background-mode . dark) (scroll-bar-foreground) (scroll-bar-background) (cursor-color . "red") (tool-bar-lines . 0) (menu-bar-lines . 0) (vertical-scroll-bars) (foreground-color . "white") (background-color . "black") (border-color . "brightblack") (font . "tty") (height . 24) (width . 80) (modeline . t) (unsplittable) (tab-bar-lines . 1) (title . "i3wm") (frameset--id . "4DD9-2A34-C03D-9FF3") (frameset--mini t) (tabs (current-tab (name . "*scratch*") (explicit-name))) (frameset--text-pixel-width . 80) (frameset--text-pixel-height . 24)) ((min-height . 4) (min-width . 10) (min-height-ignore . 2) (min-width-ignore . 2) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 4) (min-pixel-width . 10) (min-pixel-height-ignore . 2) (min-pixel-width-ignore . 2) (min-pixel-height-safe . 1) (min-pixel-width-safe . 2)) leaf (pixel-width . 80) (pixel-height . 23) (total-width . 80) (total-height . 23) (normal-height . 1.0) (normal-width . 1.0) (buffer "*scratch*" (selected) (hscroll . 0) (fringes 0 0 nil nil) (margins nil) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 148) (start . 1))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring '(#("--bg-tile" 0 9 (isearch-case-fold-search t isearch-regexp-function nil))))
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history '("~/.config/i3/daemons/" "~/.config/i3/sh/monitor_rofi.sh" "~/.config/i3/" "~/sandbox/dotfiles/sway/wall.png" "~/.config/i3/sh/setup_wallpaper.sh" "~/.config/i3/daemons/" "~/.config/i3/daemons/autoscreend.sh" "~/.config/i3/"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 208
+  "/home/sny/.config/i3/config"
+  "config"
+  'i3wm-config-mode
+  '(company-mode flycheck-mode font-lock-mode)
+  739
+  '(3336 nil)
+  nil
+  nil
+  '((buffer-display-time 26611 29159 581176 508000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (3333))))
+
+(desktop-create-buffer 208
+  nil
+  "i3"
+  'dired-mode
+  '(company-mode font-lock-mode)
+  168
+  '(nil nil)
+  t
+  '("/home/sny/.config/i3/")
+  '((buffer-display-time 26611 29156 189102 9000))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sny/.config/i3/daemons/autoscreend.sh"
+  "autoscreend.sh"
+  'sh-mode
+  '(tree-sitter-hl-mode tree-sitter-mode company-mode flycheck-mode font-lock-mode)
+  187
+  '(223 nil)
+  nil
+  nil
+  '((buffer-display-time 26611 29151 461444 485000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sny/.config/i3/sh/setup_wallpaper.sh"
+  "setup_wallpaper.sh"
+  'sh-mode
+  '(tree-sitter-hl-mode tree-sitter-mode company-mode flycheck-mode font-lock-mode)
+  76
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 26611 29150 975046 420000) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "daemons"
+  'dired-mode
+  '(company-mode font-lock-mode)
+  161
+  '(nil nil)
+  t
+  '("/home/sny/.config/i3/daemons/")
+  '((buffer-display-time 26611 29110 513432 31000))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sny/.config/i3/sh/monitor_rofi.sh"
+  "monitor_rofi.sh"
+  'sh-mode
+  '(tree-sitter-hl-mode tree-sitter-mode company-mode flycheck-mode font-lock-mode)
+  557
+  '(556 nil)
+  nil
+  nil
+  '((buffer-display-time 26611 29108 666837 181000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (602))))
+
+(desktop-create-buffer 208
+  nil
+  "sh"
+  'dired-mode
+  '(company-mode font-lock-mode)
+  156
+  '(nil nil)
+  t
+  '("/home/sny/.config/i3/sh/")
+  '((buffer-display-time 26611 28967 31620 291000))
+  '((mark-ring nil)))
+

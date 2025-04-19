@@ -79,6 +79,7 @@
 (lines-and-column 'lua-mode-hook)
 (lines-and-column 'makefile-mode-hook)
 (lines-and-column 'emacs-lisp-mode-hook)
+(lines-and-column 'java-mode-hook)
 
 ;; resize emacs frame by pixel
 (setq frame-resize-pixelwise t)
@@ -163,7 +164,7 @@
 
 (add-hook 'pascal-mode-hook #'tree-sitter-hl-mode)
 (add-hook 'sh-mode-hook #'tree-sitter-hl-mode)
-
+(add-hook 'java-mode-hook #'tree-sitter-hl-mode)
 
 ;; Lsp UI ;;
 (setq lsp-ui-doc-enable 1)
@@ -193,6 +194,14 @@
 ;; vscode-cpptools
 (require 'dap-cpptools)
 
+;; JAVA SETTINGS ;;
+;; (setenv "JAVA_HOME" "/usr/lib/jvm/java-17-openjdk")
+;; (setq lsp-java-java-path "/usr/share/java/jdtls")
+(use-package lsp-java
+  :ensure t
+  :config (add-hook 'java-mode-hook 'lsp))
+;; JAVA SETTINGS ;;
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -203,13 +212,15 @@
      "dea106ab256a8017a325f51f01b1131915989fa25db48eb831ffb18dac8ecd39"
      "6ed98f47da7556a8ce6280346e5d8e1e25bede71dc5186aa2654b93bec42d2a6"
      "1cfbec19edafb831c7729be2f6454ec019c21b9a54b39b3bb5ec276a6b21d484"
-     "3f48acc0b6cbedc3126e25eaad128f580d445654eab6602373061cb793ce58c7" default))
+     "3f48acc0b6cbedc3126e25eaad128f580d445654eab6602373061cb793ce58c7"
+     default))
  '(package-selected-packages
-   '(all-the-icons base16-theme company dap-mode evil flycheck go-mode helm
-                   i3wm-config-mode json-mode lsp-ivy lsp-ui lua-mode magit
+   '(all-the-icons base16-theme company dap-mode evil flycheck glsl-mode
+                   go-mode helm i3wm-config-mode java-mode json-mode
+                   lsp-ivy lsp-java lsp-java lsp-ui lua-mode magit
                    multiple-cursors nix-mode nushell-mode rust-mode
-                   transpose-frame tree-sitter-langs treesit-auto windresize
-                   zig-mode)))
+                   transpose-frame tree-sitter-langs treesit-auto
+                   windresize zig-mode glsl-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
