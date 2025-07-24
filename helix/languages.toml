@@ -13,3 +13,8 @@ indent = {tab-width = 2, unit = "  "}
 name = "lua"
 auto-format = true
 formatter = {command = "stylua", args = ["--column-width", "80", "--indent-type", "Spaces", "--indent-width", "2", "-"]}
+
+[[language]]
+name = "latex"
+auto-format = true
+formatter = { command = 'prettier', args = ["--parser", "latex-parser"]}

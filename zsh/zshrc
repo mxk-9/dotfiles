@@ -88,7 +88,9 @@ ud() {
 	"u")
         if [[ "$(lsof $DEV)" == "" ]]; then
             udisksctl unmount -b $DEV
-		    sudo hdparm -Y /dev/${2[1,3]}
+						if [ $? == 0 ]; then
+		    			sudo hdparm -Y /dev/${2[1,3]}
+		    		fi
         else
             echo Some processes use \'$DEV\'
             lsof $DEV
@@ -106,20 +108,31 @@ alias lsdev="file /dev/* | grep -iE 'block special' | grep --invert-match loop |
 alias M="ud m"
 alias U="ud u"
 
-E() {
-	em_daemon="emacs --title=$1 --daemon=$1"
-	em_client="emacsclient -nc --socket=$1"
-
-	if [[ $1 == "" ]]; then
-		echo "E <session_name>"
+E() {    
+	if [ $# -lt 1 ]; then
+		echo "E <session_name> <path>"
 		return
 	fi
+
+   em_daemon=""
+   if [[ "$1" == "--nix" ]] || [[ "$1" == "-n" ]]; then
+       em_daemon="nix develop -c"
+       shift
+   fi
+ 
+	em_daemon="$em_daemon emacs --title=$1 --daemon=$1"
+	em_client="emacsclient -nc --socket=$1"
 
 	if [[ $2 != "" ]]; then
 		em_daemon="$em_daemon --chdir='$2'"
 	fi
 
-	$(eval $em_daemon) && $(eval $em_client)
+	if [ -f "$2/.env" ]; then
+		source $2/.env && $(eval $em_daemon) && $(eval $em_client)
+	else
+		$(eval $em_daemon) && $(eval $em_client)
+	fi
+
 }
 
 Ekill() {
@@ -132,6 +145,44 @@ Ekill() {
 
 Elist() {
 	pgrep --list-full emacs | grep -e '--daemon=' | cut -f 3 -d '=' | cut -f 1 -d ' '
+}
+
+GetVideoMusic() {
+    link=$1
+    shift
+    to=$1
+    shift
+    name="$@.mp3"
+    temp_dir=tmp-$(head -c 500 /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 6 | head -n 1)
+
+    mkdir -p $temp_dir
+    cd $temp_dir
+
+    yt-dlp                             \
+        -x --audio-format mp3          \
+        --write-thumbnail              \
+        --cookies-from-browser firefox \
+        $link
+    if ! [ $? -eq 0 ]; then
+        return
+    fi
+
+    magick *.webp cover.jpeg
+    ffmpeg                        \
+        -i *.mp3 -i cover.jpeg    \
+        -map 0 -map 1             \
+        -acodec copy -vcodec copy \
+        "$name"
+    if ! [ $? -eq 0 ]; then
+        return
+    fi
+
+    cd ..
+    mv -v "$temp_dir/$name" "$to/$name"
+    if [ $? -ne 0 ]; then
+    	return 1
+    fi
+    rm -rfv $temp_dir
 }
 
 calc() {

@@ -1,18 +1,69 @@
+;; CONTENTS ;;
+;; Remove "backup.files~"
+
+;; ==[MELPA]==
+;; ;; use custom file
+
+;; Disable fucking warning
+;; Smooth scroll
+;; Set Font
+;; HIDE SOME GRAPHICAL ELEMENTS
+;; DISABLE SOUND
+;; Scrolloff
+;; Remove indent in some modes
+;; Set 4 space indent in emacs
+;; Line numbers and columns
+;; resize emacs frame by pixel
+;; prevent autoresizing windows when opening new buffers
+;; [(t, c)rying (to make, about) normal tabs]
+;; ==[Emacs extra settings]==
+;; Autoclose brackets
+;; THEME
+;; Multiple cursors
+;; Custom keybinds
+;; Doc-View
+
+;; MARKDOWN SETTINGS
+;; ;; Native syntax highlighting of code block
+
+;; All the icons
+
+;; ==[LSP]==
+;; ;; Enables lsp in chosen languages
+;; ;; Lsp UI
+;; ;; flycheck
+;; ;; company-mode
+;; ;; dap-mode
+;; ;; tree-sitter
+;; ;; below optional mods
+;; ;; vscode-cpptoos
+;; ;; JAVA SETTINGS
+
+;; ORG MODE
+
+;; CONTENTS ;;
+
 ;; Remove "backup.files~"
 (setq make-backup-files nil)
 
-;; use custom file
-;; (setq custom-file "~/.emacs.custom.el")
-;; (load-file custom-file)
 
 ;; ==[MELPA]== ;;
-
-
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
-(setq package-list '(magit multiple-cursors tree-sitter-langs tree-sitter windresize nix-mode evil lua-mode go-mode dap-mode lsp-ivy helm lsp-treemacs company flycheck lsp-ui lsp-mode base16-theme all-the-icons zig-mode transpose-frame magit treesit-auto))
+;; use custom file
+(setq custom-file "~/.emacs.custom.el")
+(load-file custom-file)
+
+(setq package-list '(all-the-icons auctex base16-theme cmake-mode company
+                                   dap-mode evil flycheck glsl-mode glsl-mode
+                                   go-mode helm i3wm-config-mode json-mode
+                                   lsp-ivy lsp-java lsp-java lsp-ui lua-mode
+                                   magit multiple-cursors nix-mode nushell-mode
+                                   org-ref org-ref-prettify rust-mode
+                                   transpose-frame tree-sitter-langs
+                                   treesit-auto windresize zig-mode))
 
 (unless package-archive-contents
   (package-refresh-contents))
@@ -74,12 +125,17 @@
 (lines-and-column 'pascal-mode-hook)
 (lines-and-column 'nix-mode-hook)
 (lines-and-column 'cpp-mode-hook)
+(lines-and-column 'c++-mode-hook)
 (lines-and-column 'rust-mode-hook)
 (lines-and-column 'go-mode-hook)
 (lines-and-column 'lua-mode-hook)
 (lines-and-column 'makefile-mode-hook)
 (lines-and-column 'emacs-lisp-mode-hook)
 (lines-and-column 'java-mode-hook)
+(lines-and-column 'cmake-mode-hook)
+(lines-and-column 'nix-mode-hook)
+(lines-and-column 'sh-mode-hook)
+(lines-and-column 'csharp-mode-hook)
 
 ;; resize emacs frame by pixel
 (setq frame-resize-pixelwise t)
@@ -108,8 +164,8 @@
 ;; Autoclose brackets ;;
 
 ;; THEME ;;
-;; (load-theme 'base16-catppuccin-mocha t)
-(load-theme 'base16-gruvbox-dark-medium t)
+(load-theme 'base16-catppuccin-mocha t)
+; (load-theme 'base16-gruvbox-dark-medium t)
 ;; THEME ;;
 
 ;; Multiple cursors ;;
@@ -122,8 +178,9 @@
 ;; Custom keybinds ;;
 (global-set-key (kbd "C-x e") 'evil-mode)
 
-(global-set-key (kbd "M-<f4>") 'compile)
+(global-set-key (kbd "S-<f4>") 'compile)
 (global-set-key (kbd "<f4>") (kbd "C-u M-x compile"))
+(global-set-key (kbd "C-S-R") 'compile)
 
 (global-set-key (kbd "<f5>") 'desktop-save-in-desktop-dir)
 (global-set-key (kbd "<f6>") 'desktop-change-dir)
@@ -131,9 +188,18 @@
 (global-set-key (kbd "<f7>") 'windresize)
 (global-set-key (kbd "<f8>") 'transpose-frame)
 (global-set-key (kbd "<f10>") 'save-buffers-kill-emacs)
-(global-set-key (kbd "S-<f10>") (lambda () (interactive) (desktop-save-in-desktop-dir) (save-buffers-kill-emacs)))
+(global-set-key (kbd "S-<f10>") (lambda () (interactive)
+                                  (desktop-save-in-desktop-dir)
+                                  (save-buffers-kill-emacs)))
+
+(global-set-key (kbd "C-x !") 'make-frame)
+(global-set-key (kbd "C-x O") 'overwrite-mode)
 
 ;; Custom keybinds ;;
+
+;; Doc-View ;;
+
+;; Doc-View ;;
 
 ;; MARKDOWN SETTINGS ;;
 ;; Native syntax highlighting of code block ;;
@@ -156,11 +222,14 @@
   (add-hook modeHook #'tree-sitter-hl-mode))
 
 (lsp-and-tree 'cpp-mode-hook)
+(lsp-and-tree 'c++-mode-hook)
 (lsp-and-tree 'c-mode-hook)
 (lsp-and-tree 'zig-mode-hook)
 (lsp-and-tree 'lua-mode-hook)
 (lsp-and-tree 'go-mode-hook)
 (lsp-and-tree 'rust-mode-hook)
+(lsp-and-tree 'nix-mode-hook)
+(lsp-and-tree 'csharp-mode-hook)
 
 (add-hook 'pascal-mode-hook #'tree-sitter-hl-mode)
 (add-hook 'sh-mode-hook #'tree-sitter-hl-mode)
@@ -202,28 +271,10 @@
   :config (add-hook 'java-mode-hook 'lsp))
 ;; JAVA SETTINGS ;;
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   '("0deba21a79a993751cf1aa89e4d52feee50142e75f913088b3d8c20d000821e0"
-     "dea106ab256a8017a325f51f01b1131915989fa25db48eb831ffb18dac8ecd39"
-     "6ed98f47da7556a8ce6280346e5d8e1e25bede71dc5186aa2654b93bec42d2a6"
-     "1cfbec19edafb831c7729be2f6454ec019c21b9a54b39b3bb5ec276a6b21d484"
-     "3f48acc0b6cbedc3126e25eaad128f580d445654eab6602373061cb793ce58c7"
-     default))
- '(package-selected-packages
-   '(all-the-icons base16-theme company dap-mode evil flycheck glsl-mode
-                   go-mode helm i3wm-config-mode java-mode json-mode
-                   lsp-ivy lsp-java lsp-java lsp-ui lua-mode magit
-                   multiple-cursors nix-mode nushell-mode rust-mode
-                   transpose-frame tree-sitter-langs treesit-auto
-                   windresize zig-mode glsl-mode)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+;; ORG MODE ;;
+(defun org-toggle-emphasis-markers () (interactive)
+       (save-buffer)
+       (setq org-hide-emphasis-markers (not org-hide-emphasis-markers))
+       (revert-buffer nil t))
+;; ORG MODE ;;
+
