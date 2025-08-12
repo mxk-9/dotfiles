@@ -34,23 +34,19 @@ return require('packer').startup(function(use)
 
 	use 'm4xshen/autoclose.nvim'
 
-	-- nushell
-	use 'jose-elias-alvarez/null-ls.nvim'
-	use 'LhKipp/nvim-nu'
-
-	use {
-		'VonHeikemen/lsp-zero.nvim',
-		-- branch = 'v3.x',
-		requires = {
-			-- LSP Support
-			{ 'neovim/nvim-lspconfig' },
-			-- Autocompletion
-			{ 'hrsh7th/nvim-cmp' },
-			{ 'hrsh7th/cmp-nvim-lsp' },
-			{ 'hrsh7th/cmp-nvim-lua' },
-			{ 'L3MON4D3/LuaSnip' },
-		}
-	}
+	-- use {
+	-- 	'VonHeikemen/lsp-zero.nvim',
+	-- 	-- branch = 'v3.x',
+	-- 	requires = {
+	-- 		-- LSP Support
+	-- 		{ 'neovim/nvim-lspconfig' },
+	-- 		-- Autocompletion
+	-- 		{ 'hrsh7th/nvim-cmp' },
+	-- 		{ 'hrsh7th/cmp-nvim-lsp' },
+	-- 		{ 'hrsh7th/cmp-nvim-lua' },
+	-- 		{ 'L3MON4D3/LuaSnip' },
+	-- 	}
+	-- }
 
 	-- Normal commenting
 	use {

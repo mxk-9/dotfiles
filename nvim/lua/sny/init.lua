@@ -1,5 +1,6 @@
 require("sny.remap")
 require("sny.packer")
+require("sny.lsp_config")
 
 local vo = vim.opt
 local vc = vim.cmd
@@ -8,8 +9,7 @@ local vw = vim.wo
 -- Setup title
 vo.title = true
 
-
-vo.autochdir = true
+-- vo.autochdir = true
 
 -- vc.colorscheme "catppuccin-mocha"
 vc.colorscheme "bogster"

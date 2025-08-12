@@ -1,0 +1,5 @@
+vim.lsp.enable('clangd')
+vim.lsp.enable('gopls')
+vim.lsp.enable('zls')
+vim.lsp.enable('omnisharp')
+vim.lsp.enable('lua_ls')
