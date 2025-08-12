@@ -22,6 +22,8 @@
 ;; Multiple cursors
 ;; Custom keybinds
 ;; Doc-View
+;; emacs latex to pdf
+;; EVIL MODE
 
 ;; MARKDOWN SETTINGS
 ;; ;; Native syntax highlighting of code block
@@ -132,10 +134,11 @@
 (lines-and-column 'makefile-mode-hook)
 (lines-and-column 'emacs-lisp-mode-hook)
 (lines-and-column 'java-mode-hook)
-(lines-and-column 'cmake-mode-hook)
 (lines-and-column 'nix-mode-hook)
 (lines-and-column 'sh-mode-hook)
 (lines-and-column 'csharp-mode-hook)
+
+(add-hook 'cmake-mode-hook 'display-line-numbers-mode)
 
 ;; resize emacs frame by pixel
 (setq frame-resize-pixelwise t)
@@ -164,8 +167,8 @@
 ;; Autoclose brackets ;;
 
 ;; THEME ;;
-(load-theme 'base16-catppuccin-mocha t)
-; (load-theme 'base16-gruvbox-dark-medium t)
+; (load-theme 'base16-catppuccin-mocha t)
+(load-theme 'base16-gruvbox-light-medium t)
 ;; THEME ;;
 
 ;; Multiple cursors ;;
@@ -200,6 +203,69 @@
 ;; Doc-View ;;
 
 ;; Doc-View ;;
+
+;; emacs latex to pdf ;;
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq-default TeX-master nil)
+
+;; Autobuild and watching PDF
+(setq TeX-PDF-mode t)
+
+;; LatexMK needs this to automatical builds documetn
+(setq TeX-command-default "latexmk")
+(add-hook 'LaTeX-mode-hook '(lambda ()
+							  (setq TeX-command-default)
+							  (TeX-PDF-mode 1)
+							  (TeX-source-correlate-mdoe 1)
+							  (setq TeX-source-correlate-method 'synctex)
+							  (flyspell-mode 1)
+							  (setq ispell-dictionary "russian")
+							  (LaTeX-math-mode 1)
+							  (turn-on-reftex)))
+;; emacs latex to pdf ;;
+
+;; EVIL MODE ;;
+;; With KeyChord mode
+
+;; (setq key-chord-two-keys-delay 0.5)
+;; (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
+;; (key-chord-mode 1)
+
+;; evil-escape package
+(require 'evil-escape)
+(setq-default evil-escape-key-sequence "jj")
+(setq-default evil-escape-delay 0.2)
+(evil-escape-mode)
+;; EVIL MODE ;;
+
+;; cppman via man-mode ;;
+;; (defun man-or-cppman (topic)
+;;   (interactive "sMan topic: ")
+;;   (let ((section (car (split-string topic "::"))))
+;; 	(if (or (string= section "std") (string= section "boost"))
+;; 	  (async-shell-command (concat "cppman " topic))
+;; 	  (man topic)))) 
+
+(defun man-or-cppman (topic)
+  (interactive "sMan or C++ topic: ")
+  (if (string-match-p "^std::\\|^boost::" topic)
+	(let ((buf (get-buffer-create "*cppman*")))
+	  (with-current-buffer buf
+						   (read-only-mode -1)
+						   (erase-buffer)
+						   (insert (shell-command-to-string (concat "PAGER=cat cppman " topic)))
+						   (goto-char (point-min))
+						   (view-mode))
+	  (pop-to-buffer "*cppman*"))
+	(man topic)))
+;; cppman via man-mode ;;
+
+;; cppman ;;
+(defun cppman (query)
+  (interactive "sQuery: ")
+  (async-shell-command (concat "PAGER='less -r'cppman " query)))
+;; cppman ;;
 
 ;; MARKDOWN SETTINGS ;;
 ;; Native syntax highlighting of code block ;;
