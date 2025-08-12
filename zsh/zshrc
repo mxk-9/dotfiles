@@ -236,10 +236,11 @@ alias -g -- 'chmo'='chmod 754 -Rv'
 alias -g -- 'chmoff'='chmod 000 -Rv'
 alias -g -- 'd'='dragon-drop -a -x'
 alias -g -- 'ds'='doas'
-alias -g -- 'e'='nvim'
-alias -g -- 'es'='nvim -S'
-alias -g -- 'ez'='nvim -S Session.vim'
 alias -g -- 'l'='ls'
+alias -g -- 'la'='ls -a'
+alias -g -- 'll'='ls -l'
+alias -g -- 'lla'='ls -la'
+alias -g -- 'lal'='ls -la'
 alias -g -- 'mk'='mkdir -p'
 alias -g -- 'mpv'='mpv --config-dir=/etc/mpv/'
 alias -g -- 'mpvf'='mpv --fullscreen'
@@ -255,6 +256,7 @@ alias -g -- 'noru'='nix flake update /home/sny/nixos-cfg && doas nixos-rebuild s
 alias -g -- 'nr'='nix run'
 alias -g -- 'rsync'='rsync -r --info=progress2 --info=name0'
 alias 'hx'='helix'
+alias -g -- 'e'='rm ~/.zsh_history && exit'
 alias mingw_cpp=x86_64-w64-mingw32-c++
 # Named Directory Hashes
 
