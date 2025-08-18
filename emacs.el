@@ -76,15 +76,19 @@
 ;; ==[MELPA]== ;;
 
 ;; Disable fucking warning ;;
-(setq warning-minimum-level :error)
-
-;; Smooth scroll
+(setq warning-minimum-level :error);; Smooth scroll
 (setq scroll-step 1
       scroll-conservatively 10000)
 
 ;; Set Font
-(add-to-list 'default-frame-alist '(font . "JetBrains Mono Nerd Font Medium 14"))
-(set-face-attribute 'default nil :font "JetBrains Mono Nerd Font Medium 14")
+;; (add-to-list 'default-frame-alist '(font . "JetBrains Mono Nerd Font Medium 14"))
+;; (set-face-attribute 'default nil :font "JetBrains Mono Nerd Font Medium 14")
+(require 'unicode-fonts)
+(unicode-fonts-setup)
+;; (add-to-list 'default-frame-alist '(font . "Comic Sans MS 14"))
+(add-to-list 'default-frame-alist '(font . "Comic Mono 14"))
+(set-fontset-font "fontset-default" 'windows-1251 "Comic Sans MS 14")
+;; (set-face-attribute 'default nil :font "Comic Mono 14")
 
 ;; HIDE SOME GRAPHICAL ELEMENTS
 (tool-bar-mode -1)
@@ -306,6 +310,7 @@
 (setq lsp-ui-doc-position 'at-point)
 (setq lsp-ui-doc-side 'right)
 (setq lsp-ui-doc-show-with-cursor 1)
+(global-set-key (kbd "s-l C-o") 'lsp-ui-doc-focus-frame)
 
 ;; flycheck ;;
 (global-flycheck-mode +1) ;; does it usefull ??
