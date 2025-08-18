@@ -12,7 +12,9 @@ vo.title = true
 -- vo.autochdir = true
 
 -- vc.colorscheme "catppuccin-mocha"
-vc.colorscheme "bogster"
+-- vc.colorscheme "bogster"
+vim.o.background = "dark"
+vc.colorscheme "gruvbox"
 
 vo.shell = "bash"
 

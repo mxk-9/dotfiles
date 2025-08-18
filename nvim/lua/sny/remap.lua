@@ -26,6 +26,7 @@ kmset("n", "<leader>Q", ":mks!<CR>")
 
 -- Remap for esc
 kmset("i", "jj", "<Esc>")
+kmset("i", "оо", "<Esc>")
 kmset("i", "<C-j>", "<Esc>")
 kmset("i", "<C-M-j>", "<Esc>i")
 
@@ -45,3 +46,9 @@ kmset("n", "<leader>bn", ":bn<CR>")
 kmset("n", "<leader>bN", ":bp<CR>")
 kmset("n", "<leader>bd", ":bd<CR>")
 kmset("n", "<leader>bD", ":bd!<CR>")
+
+
+
+vc(
+	"set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
+)

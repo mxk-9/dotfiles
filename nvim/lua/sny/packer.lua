@@ -24,6 +24,7 @@ return require('packer').startup(function(use)
 	-- Colorschemes
 	use { "catppuccin/nvim", as = "catppuccin" }
 	use "vv9k/bogster"
+	use "ellisonleao/gruvbox.nvim"
 
 	-- Treesitter
 	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
@@ -34,12 +35,18 @@ return require('packer').startup(function(use)
 
 	use 'm4xshen/autoclose.nvim'
 
+	-- LSP Support
+	use { 'neovim/nvim-lspconfig' }
+	-- Autocompletion
+	use { 'hrsh7th/nvim-cmp' }
+	use { 'hrsh7th/cmp-nvim-lsp' }
+	use { 'hrsh7th/cmp-nvim-lua' }
+	use { 'L3MON4D3/LuaSnip' }
+
 	-- use {
 	-- 	'VonHeikemen/lsp-zero.nvim',
 	-- 	-- branch = 'v3.x',
 	-- 	requires = {
-	-- 		-- LSP Support
-	-- 		{ 'neovim/nvim-lspconfig' },
 	-- 		-- Autocompletion
 	-- 		{ 'hrsh7th/nvim-cmp' },
 	-- 		{ 'hrsh7th/cmp-nvim-lsp' },
@@ -61,4 +68,12 @@ return require('packer').startup(function(use)
 
 	-- Modding Garry's Mod
 	-- use 'vim-scripts/gmlua.vim'
+
+	-- Formatter
+	use({
+		"stevearc/conform.nvim",
+		config = function()
+			require("conform").setup()
+		end,
+	})
 end)
